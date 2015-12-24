@@ -1,0 +1,7 @@
+root,0,-Infinity
+B2,1,4
+root,0,4
+B3,1,1
+root,0,4
+B5,1,2
+root,0,4

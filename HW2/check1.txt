@@ -1,0 +1,62 @@
+Run MiniMax Algo
+playerNo : 1
+cutOfDepth : 2
+pitsStatesString for player-2 : 2 2 2
+pitsStatesString for player-1 : 2 2 2 
+#stones in player-2 mancala : 0
+#stones in player-1 mancala : 0
+
+Board State : 
+P M   A2  A3  A4
+2 0 | 2 | 2 | 2 | * | 
+1 * | 2 | 2 | 2 | 0 | 
+P     B2  B3  B4  M 
+
+Valid Moves for Player : 1 are :  B2 B3 B4
+FINAL Temp Board after Action : B2
+PitName : B2 has : 2 stones 
+ board[1][2] = 3 board[1][3] = 3
+After B2 : 
+Board State : 
+P M   A2  A3  A4
+2 0 | 2 | 2 | 2 | * | 
+1 * | 0 | 3 | 3 | 0 | 
+P     B2  B3  B4  M 
+
+Board State : 
+P M   A2  A3  A4
+2 0 | 2 | 2 | 2 | * | 
+1 * | 0 | 3 | 3 | 0 | 
+P     B2  B3  B4  M 
+FINAL Temp Board after Action : B3
+PitName : B3 has : 2 stones 
+ board[1][3] = 3 board[1][4] = 1
+After B3 : 
+Board State : 
+P M   A2  A3  A4
+2 0 | 2 | 2 | 2 | * | 
+1 * | 2 | 0 | 3 | 1 | 
+P     B2  B3  B4  M 
+Player : 1 got another chance!!!!!!!!!!!!
+But we are forcing him to stop
+
+Board State : 
+P M   A2  A3  A4
+2 0 | 2 | 2 | 2 | * | 
+1 * | 2 | 0 | 3 | 1 | 
+P     B2  B3  B4  M 
+FINAL Temp Board after Action : B4
+PitName : B4 has : 2 stones 
+ board[1][4] = 1 board[0][3] = 3
+After B4 : 
+Board State : 
+P M   A2  A3  A4
+2 0 | 2 | 2 | 3 | * | 
+1 * | 2 | 2 | 0 | 1 | 
+P     B2  B3  B4  M 
+
+Board State : 
+P M   A2  A3  A4
+2 0 | 2 | 2 | 3 | * | 
+1 * | 2 | 2 | 0 | 1 | 
+P     B2  B3  B4  M 

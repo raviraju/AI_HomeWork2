@@ -1,0 +1,319 @@
+Run Greedy Algo
+playerNo : 1
+cutOfDepth : 2
+ignoring given cutOfDepth : 2 and assuming cutOfDepth = 1
+pitsStatesString for player-2 : 2 2 2 2
+pitsStatesString for player-1 : 2 2 2 2
+#stones in player-2 mancala : 0
+#stones in player-1 mancala : 0
+
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 2 | * | 
+1 * | 2 | 2 | 2 | 2 | 0 | 
+P     B2  B3  B4  B5  M 
+
+root,0,-9999999
+
+Valid Moves for Player : 1 are :  B2 B3 B4 B5
+*************************************************************************
+MAX(Player : 1 ) chose pit B2
+PitName : B2 has : 2 stones 
+ board[1][2] = 3 board[1][3] = 3
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B2 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 2 | * | 
+1 * | 0 | 3 | 3 | 2 | 0 | 
+P     B2  B3  B4  B5  M 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 0
+	B2,1,0
+	no more chances,returning EVAL : 0
+root,0,0
+*************************************************************************
+MAX(Player : 1 ) chose pit B3
+PitName : B3 has : 2 stones 
+ board[1][3] = 3 board[1][4] = 3
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B3 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 2 | * | 
+1 * | 2 | 0 | 3 | 3 | 0 | 
+P     B2  B3  B4  B5  M 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 0
+	B3,1,0
+	no more chances,returning EVAL : 0
+root,0,0
+*************************************************************************
+MAX(Player : 1 ) chose pit B4
+PitName : B4 has : 2 stones 
+ board[1][4] = 3 board[1][5] = 1
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B4 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 2 | * | 
+1 * | 2 | 2 | 0 | 3 | 1 | 
+P     B2  B3  B4  B5  M 
+
+Player : 1 got another chance!!!!!!!!!!!!
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MAX(Player : 1 ) turn at depth : 1
+	cutOfDepth : 1 reached. It has AnotherChance so its non-leaf node, hence using defaultNodeValue : -9999999
+	B4,1,-9999999
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	MAX(Player : 1 ) chose pit B2
+	PitName : B2 has : 2 stones 
+	 board[1][2] = 3 board[1][3] = 1
+	Before Grab
+
+	Board State : 
+	P M   A2  A3  A4  A5
+	2 0 | 2 | 2 | 2 | 2 | * | 
+	1 * | 0 | 3 | 1 | 3 | 1 | 
+	P     B2  B3  B4  B5  M 
+
+
+	last stone added to a former empty pit owned by player, hence grabbing stones across and last stone to mancala
+
+	$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+	After B2 : 
+	Board State : 
+	P M   A2  A3  A4  A5
+	2 0 | 2 | 2 | 0 | 2 | * | 
+	1 * | 0 | 3 | 0 | 3 | 4 | 
+	P     B2  B3  B4  B5  M 
+
+
+	$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 4
+	B2,1,4
+	no more chances,returning EVAL : 4
+	B4,1,4
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	MAX(Player : 1 ) chose pit B3
+	PitName : B3 has : 2 stones 
+	 board[1][3] = 1 board[1][4] = 4
+	$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+	After B3 : 
+	Board State : 
+	P M   A2  A3  A4  A5
+	2 0 | 2 | 2 | 2 | 2 | * | 
+	1 * | 2 | 0 | 1 | 4 | 1 | 
+	P     B2  B3  B4  B5  M 
+
+
+	$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 1
+	B3,1,1
+	no more chances,returning EVAL : 1
+	B4,1,4
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	MAX(Player : 1 ) chose pit B4
+	PitName : B4 has : 0 stones 
+	Hence skipping...
+	MAX(Player : 1 ) chose pit B5
+	PitName : B5 has : 3 stones 
+	 board[1][5] = 2	 board[0][4] = 3 board[0][3] = 3
+	$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+	After B5 : 
+	Board State : 
+	P M   A2  A3  A4  A5
+	2 0 | 2 | 2 | 3 | 3 | * | 
+	1 * | 2 | 2 | 0 | 0 | 2 | 
+	P     B2  B3  B4  B5  M 
+
+
+	$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 2
+	B5,1,2
+	no more chances,returning EVAL : 2
+	B4,1,4
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+root,0,4
+*************************************************************************
+MAX(Player : 1 ) chose pit B5
+PitName : B5 has : 2 stones 
+ board[1][5] = 1 board[0][4] = 3
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B5 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 3 | * | 
+1 * | 2 | 2 | 2 | 0 | 1 | 
+P     B2  B3  B4  B5  M 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 1
+	B5,1,1
+	no more chances,returning EVAL : 1
+root,0,4
+*************************************************************************
+*************************************************************************
+evalMovesMap : 
+0 :  B2 B3
+1 :  B5
+4 :  B4
+For Max Eval : 4, we have moves : B4
+First desiredAction : B4
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+PitName : B4 has : 2 stones 
+ board[1][4] = 3 board[1][5] = 1
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B4 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 2 | * | 
+1 * | 2 | 2 | 0 | 3 | 1 | 
+P     B2  B3  B4  B5  M 
+
+Player : 1 got another chance!!!!!!!!!!!!
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+root,0,-9999999
+
+Valid Moves for Player : 1 are :  B2 B3 B4 B5
+*************************************************************************
+MAX(Player : 1 ) chose pit B2
+PitName : B2 has : 2 stones 
+ board[1][2] = 3 board[1][3] = 1
+Before Grab
+
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 2 | * | 
+1 * | 0 | 3 | 1 | 3 | 1 | 
+P     B2  B3  B4  B5  M 
+
+
+last stone added to a former empty pit owned by player, hence grabbing stones across and last stone to mancala
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B2 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 0 | 2 | * | 
+1 * | 0 | 3 | 0 | 3 | 4 | 
+P     B2  B3  B4  B5  M 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 4
+	B2,1,4
+	no more chances,returning EVAL : 4
+root,0,4
+*************************************************************************
+MAX(Player : 1 ) chose pit B3
+PitName : B3 has : 2 stones 
+ board[1][3] = 1 board[1][4] = 4
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B3 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 2 | * | 
+1 * | 2 | 0 | 1 | 4 | 1 | 
+P     B2  B3  B4  B5  M 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 1
+	B3,1,1
+	no more chances,returning EVAL : 1
+root,0,4
+*************************************************************************
+MAX(Player : 1 ) chose pit B4
+PitName : B4 has : 0 stones 
+Hence skipping...
+MAX(Player : 1 ) chose pit B5
+PitName : B5 has : 3 stones 
+ board[1][5] = 2 board[0][4] = 3 board[0][3] = 3
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B5 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 3 | 3 | * | 
+1 * | 2 | 2 | 0 | 0 | 2 | 
+P     B2  B3  B4  B5  M 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	cutOfDepth : 1 reached It has NO AnotherChance so its leaf node, hence using computing EVAL of board : 2
+	B5,1,2
+	no more chances,returning EVAL : 2
+root,0,4
+*************************************************************************
+*************************************************************************
+evalMovesMap : 
+1 :  B3
+2 :  B5
+4 :  B2
+For Max Eval : 4, we have moves : B2
+First desiredAction : B2
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+PitName : B2 has : 2 stones 
+ board[1][2] = 3 board[1][3] = 1
+Before Grab
+
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 2 | 2 | * | 
+1 * | 0 | 3 | 1 | 3 | 1 | 
+P     B2  B3  B4  B5  M 
+
+
+last stone added to a former empty pit owned by player, hence grabbing stones across and last stone to mancala
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B2 : 
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 0 | 2 | * | 
+1 * | 0 | 3 | 0 | 3 | 4 | 
+P     B2  B3  B4  B5  M 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+DesiredAction :B2
+Next State : 
+
+Board State : 
+P M   A2  A3  A4  A5
+2 0 | 2 | 2 | 0 | 2 | * | 
+1 * | 0 | 3 | 0 | 3 | 4 | 
+P     B2  B3  B4  B5  M 
+

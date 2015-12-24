@@ -1,0 +1,13 @@
+Explanation for MIN/MAX node identification.
+As you can see in the image, Player-1 is the MAX player and Player-2 is the MIN player. Here we are going till depth 2.
+
+
+"Root": MAX player makes a move so root is a MAX node. This will be true all the time.
+"Root->B2": When MAX player makes a move B2, the turn ends there as evident from the fact that the child nodes of B2 are A2 and A3, i.e MIN player is making a move from B2. So B2 becomes a MIN node.
+"Root->B3": When MAX player makes a move B3, the turn doesn't end and the player gets another move which is evident from the fact that the child node of B3 is B2, i.e. MAX player is making a move from B3. So B3 becomes a MAX node.
+"Root->B2->A2": When MIN player makes a move A2 from B2, the turn doesn't end there as evident from the fact that the child node of A2 is A3, i.e. MIN player is making a move from A2. So A2 becomes a MIN node.
+"Root->B2->A3": When MIN player makes a move A3 from B2, the turn ends as evident from the fact that there is no child node for A3. So A3 becomes a MAX node.
+"Root->B2->A2->A3": Same explanation as for "Root->B2->A3". A MAX node.
+"Root->B3->B2": Same explanation as for "Root->B2". A MIN node.
+"Root->B3->B2->A2" & "Root->B3->B2->A3": Same explanation as for "Root->B2->A3". MAX nodes.
+

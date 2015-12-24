@@ -1,0 +1,122 @@
+Run Alpha-Beta Algo
+playerNo : 1
+cutOfDepth : 2
+pitsStatesString for player-2 : 0 2 0
+pitsStatesString for player-1 : 0 1 0 
+#stones in player-2 mancala : 0
+#stones in player-1 mancala : 0
+
+Board State : 
+P M   A2  A3  A4
+2 0 | 0 | 2 | 0 | * | 
+1 * | 0 | 1 | 0 | 0 | 
+P     B2  B3  B4  M 
+
+root,0,-9999999,-9999999,9999999
+
+Valid Moves for Player : 1 are :  B2 B3 B4
+*************************************************************************
+MAX(Player : 1 ) chose pit B2
+PitName : B2 has : 0 stones 
+Hence skipping...
+MAX(Player : 1 ) chose pit B3
+PitName : B3 has : 1 stones 
+ board[1][3] = 1
+Before Grab
+
+Board State : 
+P M   A2  A3  A4
+2 0 | 0 | 2 | 0 | * | 
+1 * | 0 | 0 | 1 | 0 | 
+P     B2  B3  B4  M 
+
+
+last stone added to a former empty pit owned by player, hence grabbing stones across and last stone to mancala
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B3 : 
+Board State : 
+P M   A2  A3  A4
+2 0 | 0 | 2 | 0 | * | 
+1 * | 0 | 0 | 0 | 1 | 
+P     B2  B3  B4  M 
+
+Reached GAME OVER State
+Move all stones from pits to respective mancalas
+
+Board State : 
+P M   A2  A3  A4
+2 2 | 0 | 0 | 0 | * | 
+1 * | 0 | 0 | 0 | 1 | 
+P     B2  B3  B4  M 
+
+Player 2 is WINNER!!!
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	its MIN(Player : 2 ) turn at depth : 1
+	B3,1,9999999,-9999999,9999999
+	Reached GAME OVER State
+	Move all stones from pits to respective mancalas
+
+	Board State : 
+	P M   A2  A3  A4
+	2 2 | 0 | 0 | 0 | * | 
+	1 * | 0 | 0 | 0 | 1 | 
+	P     B2  B3  B4  M 
+
+	GAME OVER State, hence using computing EVAL of board : -1
+	B3,1,-1,-9999999,9999999
+root,0,-1,-1,9999999
+*************************************************************************
+MAX(Player : 1 ) chose pit B4
+PitName : B4 has : 0 stones 
+Hence skipping...
+*************************************************************************
+evalMovesMap : 
+-1 :  B3
+For Max Eval : -1, we have moves : B3
+First desiredAction : B3
+PitName : B3 has : 1 stones 
+ board[1][3] = 1
+Before Grab
+
+Board State : 
+P M   A2  A3  A4
+2 0 | 0 | 2 | 0 | * | 
+1 * | 0 | 0 | 1 | 0 | 
+P     B2  B3  B4  M 
+
+
+last stone added to a former empty pit owned by player, hence grabbing stones across and last stone to mancala
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+After B3 : 
+Board State : 
+P M   A2  A3  A4
+2 0 | 0 | 2 | 0 | * | 
+1 * | 0 | 0 | 0 | 1 | 
+P     B2  B3  B4  M 
+
+Reached GAME OVER State
+Move all stones from pits to respective mancalas
+
+Board State : 
+P M   A2  A3  A4
+2 2 | 0 | 0 | 0 | * | 
+1 * | 0 | 0 | 0 | 1 | 
+P     B2  B3  B4  M 
+
+Player 2 is WINNER!!!
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Max Value for next state  : -1
+Next State:
+
+Board State : 
+P M   A2  A3  A4
+2 2 | 0 | 0 | 0 | * | 
+1 * | 0 | 0 | 0 | 1 | 
+P     B2  B3  B4  M 
+
